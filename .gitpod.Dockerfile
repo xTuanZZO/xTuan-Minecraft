@@ -1,5 +1,9 @@
-FROM gitpod/workspace-full
+FROM ubuntu:20.04
 
-# Cài đặt Java (nếu chưa có)
-RUN sudo apt-get update && sudo apt-get install -y openjdk-21-jre-headless
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk wget && \
+    apt-get clean;
+
+WORKDIR /workspace
+
 
