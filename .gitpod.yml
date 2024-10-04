@@ -1,15 +1,8 @@
-image: gitpod/workspace-full
-
+image:
+  file: .gitpod.Dockerfile
 tasks:
   - init: |
-      sudo apt update
-      sudo apt install -y openjdk-17-jdk
-      wget https://api.papermc.io/v2/projects/paper/versions/1.21.1/builds/latest/downloads/paper-1.21.1.jar -O paper.jar
-      echo "eula=true" > eula.txt
+      chmod +x Minecraft.sh
   - command: |
-      java -Xms2G -Xmx2G -jar paper.jar nogui
-
-ports:
-  - port: 25565
-    onOpen: notify
+      ./Minecraft.sh
 
