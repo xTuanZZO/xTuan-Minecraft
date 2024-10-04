@@ -1,10 +1,7 @@
-image:
-  file: .gitpod.Dockerfile
-
 tasks:
   - init: |
-      echo "Java version:"
-      java -version
-    command: |
-      # Lệnh để khởi động server Minecraft của bạn, ví dụ:
+      sudo apt-get update && sudo apt-get install -y openjdk-21-jre-headless
+      curl -o server.jar https://api.papermc.io/v2/projects/paper/versions/1.21.1/builds/119/downloads/paper-1.21.1-119.jar
+  - command: |
       java -Xmx1024M -Xms1024M -jar server.jar nogui
+
