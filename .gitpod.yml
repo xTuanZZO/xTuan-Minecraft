@@ -1,8 +1,11 @@
 image:
-  file: .gitpod.Dockerfile
+  image: gitpod/workspace-full
+ports:
+  - port: 25565
+    onOpen: ignore
 tasks:
   - init: |
-      chmod +x Minecraft.sh
-  - command: |
-      ./Minecraft.sh
+      sudo apt-get update
+      sudo apt-get install -y openjdk-17-jdk wget
+  - command: ./Minecraft.sh
 
