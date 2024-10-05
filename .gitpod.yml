@@ -1,11 +1,13 @@
-image:
-  image: gitpod/workspace-full
+image: gitpod/workspace-full
+
 ports:
   - port: 25565
     onOpen: ignore
+
 tasks:
   - init: |
       sudo apt-get update
       sudo apt-get install -y openjdk-17-jdk wget
-  - command: ./Minecraft.sh
+    command: ./Minecraft.sh
+
 
